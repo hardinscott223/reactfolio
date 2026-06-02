@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Tech = () => {
-  return (
-    <div>Tech</div>
-  )
-}
+  const titleRef = useRef(null);
 
-export default Tech
+  useGSAP(() => {
+    gsap.from(titleRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+    });
+  });
+
+  return (
+    <div ref={titleRef}>
+      Tech
+    </div>
+  );
+};
+
+export default Tech;
