@@ -7,18 +7,17 @@ import {
   Hero,
   Navbar,
   Tech,
-  Works
+  Works,
+  Footer
 } from "./components";
 
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <div className="relative z-0 bg-primary">
-          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-            <Navbar />
-            <Hero />
-          </div>
+    <BrowserRouter>
+      <div className="relative z-0 bg-black min-h-screen">
+        <Navbar />  
+        <main className="pt-40">
+          <Hero />
           <About />
           <Experience />
           <Tech />
@@ -27,9 +26,10 @@ const App = () => {
           <div className="relative z-0">
             <Contact />
           </div>
-        </div>
-      </BrowserRouter>
-    </div>
+          <Footer/>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 };
 
