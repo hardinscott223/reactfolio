@@ -15,7 +15,6 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Monitors scroll to add the subtle backdrop blur seen on the live site
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -41,7 +40,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="defichain logo" className='h-6 object-contain' />
+          <img src={logo} alt="codeterminal logo" className='h-10 object-contain' />
         </Link>
 
         {/* Desktop Navigation & CTA Container */}
@@ -72,8 +71,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* DeFiChain Iconic Gradient Border Button */}
-          <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-r from-[#FF00AF] to-[#7000FF]">
+          <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-white rounded-full group bg-[#0A21C0]">
             <span className="relative px-6 py-2 transition-all ease-in duration-75 bg-black rounded-full group-hover:bg-opacity-0">
               Get CV Form
             </span>
@@ -119,8 +117,8 @@ const Navbar = () => {
               ))}
             </ul>
             
-            <button className="w-full text-center py-2.5 rounded-full bg-gradient-to-r from-[#FF00AF] to-[#7000FF] text-white text-sm font-medium">
-              Get DFI
+            <button className="w-full text-center py-2.5 rounded-full bg-[#0A21C0] text-white text-sm font-medium">
+              Get CV Form
             </button>
           </div>
         </div>

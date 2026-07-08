@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { logo } from '../assets'; // Your logo asset
-// Import your social icons (e.g., from react-icons or your assets folder)
-import { FaGithub, FaLinkedin, FaTwitter, FaDiscord } from 'react-icons/fa'; 
+import { logo } from '../assets';
 
 const Footer = () => {
-  // Organized structural data matching their footer layout
   const footerLinks = [
     {
       title: "Explore",
@@ -30,18 +27,17 @@ const Footer = () => {
     },
   ];
 
-  const socialLinks = [
-    { icon: <FaGithub size={20} />, url: "https://github.com" },
-    { icon: <FaLinkedin size={20} />, url: "https://linkedin.com" },
-    { icon: <FaTwitter size={20} />, url: "https://twitter.com" },
-    { icon: <FaDiscord size={20} />, url: "https://discord.com" },
-  ];
+  // const socialLinks = [
+  //   { icon: test, url: "" },
+  //   { icon: test, url: "" },
+  //   { icon: test, url: "" },
+  //   { icon: test, url: "" },
+  // ];
 
   return (
-    <footer className="w-full bg-black border-t border-neutral-900 py-16 px-6 mt-20">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+    <footer className="w-full relative mx-auto mt-24 max-w-7xl px-6 pb-8">
+      <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
         
-        {/* Top Section: Link Columns & Social Icons Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
           {footerLinks.map((group) => (
             <div key={group.title} className="flex flex-col gap-4">
@@ -65,12 +61,11 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Social Icons Column */}
           <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
             <h4 className="text-neutral-500 font-bold text-xs uppercase tracking-wider">
               Connect
             </h4>
-            <div className="flex flex-row gap-4 items-center text-neutral-400">
+            {/* <div className="flex flex-row gap-4 items-center text-neutral-400">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -82,14 +77,12 @@ const Footer = () => {
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
-        {/* Divider Line */}
         <div className="w-full h-[1px] bg-neutral-900" />
 
-        {/* Bottom Section: Logo, Copyright, and Legals */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
             <img src={logo} alt="logo" className="h-6 object-contain" />

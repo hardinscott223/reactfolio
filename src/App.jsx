@@ -10,6 +10,7 @@ import {
   Works,
   Footer
 } from "./components";
+import SocialSidebar from "./components/Sidebar";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <div className="relative z-0 bg-black min-h-screen">
         <Navbar />  
         <main className="pt-40">
+          <SocialSidebar />
           <Hero />
           <About />
           <Experience />
