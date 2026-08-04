@@ -8,27 +8,56 @@ import {
   Navbar,
   Tech,
   Works,
-  Footer
+  Footer,
 } from "./components";
-import SocialSidebar from "./components/Sidebar";
+import SocialSidebar from "./components/section/Sidebar";
+import Cursor from "./components/museum/cursor";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-black min-h-screen">
-        <Navbar />  
-        <main className="pt-40">
-          <SocialSidebar />
+    <BrowserRouter 
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+    <Cursor />
+      <div className="bg-background text-primary min-h-screen">
+        {/* Fixed Navbar */}
+        <Navbar />
+
+        {/* Social Sidebar */}
+        <SocialSidebar />
+
+        {/* Main Content */}
+        <main>
           <Hero />
-          <About />
-          <Experience />
-          <Tech />
-          <Works />
-          <Feedbacks />
-          <div className="relative z-0">
+
+          <section id="about">
+            <About />
+          </section>
+
+          <section id="work">
+            <Experience />
+          </section>
+
+          <section id="tech">
+            <Tech />
+          </section>
+
+          <section id="projects">
+            <Works />
+          </section>
+
+          <section id="feedbacks">
+            <Feedbacks />
+          </section>
+
+          <section id="contact">
             <Contact />
-          </div>
-          <Footer/>
+          </section>
+
+          <Footer />
         </main>
       </div>
     </BrowserRouter>

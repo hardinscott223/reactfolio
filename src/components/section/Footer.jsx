@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { logo } from '../assets';
 
 const Footer = () => {
   const footerLinks = [
@@ -84,9 +83,9 @@ const Footer = () => {
         <div className="w-full h-[1px] bg-neutral-900" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
+          {/* <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2">
             <img src={logo} alt="logo" className="h-6 object-contain" />
-          </Link>
+          </Link> */}
           
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-xs text-neutral-500 font-medium">
             <p>© {new Date().getFullYear()} YourName. All rights reserved.</p>
