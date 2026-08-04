@@ -11,7 +11,7 @@ import {
   Footer,
 } from "./components";
 import SocialSidebar from "./components/section/Sidebar";
-import Cursor from "./components/museum/cursor";
+import Cursor from "./components/museum/Cursor";
 
 const App = () => {
   return (
