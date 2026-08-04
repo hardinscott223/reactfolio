@@ -1,15 +1,239 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Pirata+One&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap");
+@custom-variant dark (&:is(.dark *));
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
+html,
+body {
+  cursor: none;
 }
 
-/* font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  color-scheme: #141619; */
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  --font-display: "Jacquarda Bastarda 9", "Pirata One", serif;
+  --font-gothic: "Pirata One", serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-label: "Cormorant Garamond", Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+  --color-umber: var(--umber);
+  --color-vellum: var(--vellum);
+  --color-ink: var(--ink);
+  --color-parchment: var(--parchment);
+}
+
+:root {
+  --radius: 0px;
+
+  --ink: oklch(0.16 0.018 70);
+  --vellum: oklch(0.93 0.017 70);
+  --gold: oklch(0.72 0.075 82);
+  --gold-dim: oklch(0.52 0.05 80);
+  --umber: oklch(0.35 0.04 55);
+  --parchment: oklch(0.9 0.03 82);
+
+  --background: oklch(0.16 0.018 70);
+  --foreground: oklch(0.93 0.017 70);
+  --card: oklch(0.19 0.02 68);
+  --card-foreground: oklch(0.93 0.017 70);
+  --popover: oklch(0.19 0.02 68);
+  --popover-foreground: oklch(0.93 0.017 70);
+  --primary: oklch(0.72 0.075 82);
+  --primary-foreground: oklch(0.16 0.018 70);
+  --secondary: oklch(0.24 0.024 62);
+  --secondary-foreground: oklch(0.93 0.017 70);
+  --muted: oklch(0.24 0.024 62);
+  --muted-foreground: oklch(0.68 0.026 74);
+  --accent: oklch(0.35 0.04 55);
+  --accent-foreground: oklch(0.93 0.017 70);
+  --destructive: oklch(0.5 0.14 30);
+  --destructive-foreground: oklch(0.93 0.017 70);
+  --border: oklch(0.93 0.017 70 / 18%);
+  --input: oklch(0.93 0.017 70 / 22%);
+  --ring: oklch(0.72 0.075 82 / 55%);
+
+  --shadow-frame:
+    0 2px 0 oklch(0.93 0.017 70 / 6%), 0 40px 90px -30px oklch(0 0 0 / 85%);
+  --gradient-vignette: radial-gradient(
+    ellipse at 50% 35%,
+    transparent 42%,
+    oklch(0.16 0.018 70 / 78%) 100%
+  );
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--gold-dim);
+    color: var(--ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-gothic);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--umber);
+  }
+}
+
+/* ——— Utilities ——— */
+
+@utility font-pixelgothic {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+@utility label-xs {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-size: 0.6875rem;
+  line-height: 1;
+}
+
+/* pixel dither texture */
+@utility pixel-veil {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        oklch(0.16 0.018 70 / 35%) 0px,
+        oklch(0.16 0.018 70 / 35%) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        oklch(0.16 0.018 70 / 22%) 0px,
+        oklch(0.16 0.018 70 / 22%) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    mix-blend-mode: multiply;
+  }
+}
+
+/* fine paper grain */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.28;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+}
+
+@utility vignette {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: var(--gradient-vignette);
+  }
+}
+
+@utility vintage {
+  filter: sepia(0.32) saturate(0.72) contrast(1.08) brightness(0.82);
+}
+
+@utility rule-gold {
+  border-top: 1px solid oklch(0.72 0.075 82 / 32%);
+}
+
+@utility frame-thin {
+  border: 1px solid oklch(0.72 0.075 82 / 28%);
+  box-shadow: inset 0 0 0 4px oklch(0.16 0.018 70 / 70%),
+    inset 0 0 0 5px oklch(0.72 0.075 82 / 18%);
+}
+
+@utility engraved {
+  text-shadow:
+    0 1px 0 oklch(0 0 0 / 70%),
+    0 -1px 0 oklch(0.93 0.017 70 / 12%);
+}
+
+@utility reveal-init {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

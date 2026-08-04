@@ -1,0 +1,20 @@
+import React from 'react'
+
+const Works = () => {
+  return (
+    <section className="relative w-full h-screen items-center justify-center bg-black overflow-hidden h-[100dvh] pt-80">
+      <div className="z-10 max-w-7xl mx-auto px-6 flex flex-row items-start gap-5 w-full"> 
+        <div>
+          <p className="text-neutral-400 font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-4 max-w-xl">
+            Works that I have done in the past
+          </p>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-row items-start gap-5 w-full"> 
+
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Works
