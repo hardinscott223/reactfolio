@@ -88,14 +88,14 @@ const Hero = () => {
               data-hero-fade
               className="label-xs mb-8 text-gold/80"
             >
-              Fol. I &nbsp;·&nbsp; Creative Full Stack Developer
+              Fol. I &nbsp;·&nbsp; Full Stack Developer
             </p>
 
             <h1 data-hero-title className="text-vellum">
               <span className="block overflow-hidden">
                 <span
                   data-hero-line
-                  className="font-pixelgothic block text-[19vw] leading-[0.78] tracking-tight sm:text-[16vw] lg:text-[12.5vw]"
+                  className="block text-[16vw] leading-[0.85] tracking-tight sm:text-[16vw] lg:text-[12.5vw]"
                 >
                   Hardin
                 </span>
@@ -103,7 +103,7 @@ const Hero = () => {
               <span className="block overflow-hidden pl-[6vw]">
                 <span
                   data-hero-line
-                  className="font-pixelgothic block text-[19vw] leading-[0.78] tracking-tight text-vellum/85 sm:text-[16vw] lg:text-[12.5vw]"
+                  className="block text-[15vw] leading-[0.85] tracking-tight text-vellum/85 sm:text-[16vw] lg:text-[12.5vw]"
                 >
                   Scott
                 </span>
